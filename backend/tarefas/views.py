@@ -10,7 +10,7 @@ def tarefas_home(request):
         "nome": "Sara",
         'tarefas': TarefaModel.objects.all() # Estamos enviando todos os registros dos objetos tarefas que foram criados
     }
-    return render(request, 'tarefas/home.html', contexto)
+    return render(request, 'tarefas/../templates/tarefas/home.html', contexto)
 def tarefas_adicionar(request:HttpRequest):
     print('Carregando view de adicionar tarefas_adicionar')
     if request.method == 'POST':
@@ -22,7 +22,7 @@ def tarefas_adicionar(request:HttpRequest):
     contexto = {
         'form': TarefaForm
     }
-    return render(request, 'tarefas/adicionar.html', contexto)
+    return render(request, 'tarefas/../templates/tarefas/adicionar.html', contexto)
 def tarefas_remover(request:HttpRequest, id):
     tarefa = get_object_or_404(TarefaModel ,id = id) # Ele vai tentar obter um item do banco de dados, se o objeto não for encontrado, vai retornar um erro 404
     tarefa.delete()
@@ -38,4 +38,4 @@ def tarefas_editar(request:HttpRequest, id):
     contexto = {
         'form': formulario
     }
-    return render(request, 'tarefas/editar.html', contexto)
+    return render(request, 'tarefas/../templates/tarefas/editar.html', contexto)
