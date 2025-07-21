@@ -1,18 +1,17 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 function App() {
   const [tarefas, setTarefas] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/tarefas/api/")
+    fetch("http://44.201.100.45/:8000/tarefas/api/")
       .then((res) => res.json())
       .then((data) => {
         console.log("Dados recebidos:", data);
         setTarefas(data);
-    })
-    .catch((erro) => console.error("Erro ao buscar tarefas:", erro));
-}, []);
-
+      })
+      .catch((erro) => console.error("Erro ao buscar tarefas:", erro));
+  }, []);
 
   return (
     <div>
