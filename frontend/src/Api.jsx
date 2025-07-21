@@ -4,7 +4,7 @@ function App() {
   const [tarefas, setTarefas] = useState([]);
 
   useEffect(() => {
-    fetch("http://44.201.100.45/:8000/tarefas/api/")
+    fetch("http://44.201.100.45:8000/tarefas/api/")
       .then((res) => res.json())
       .then((data) => {
         console.log("Dados recebidos:", data);
